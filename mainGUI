@@ -1,0 +1,68 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "MM2 GODLII HUB", HidePremium = true, SaveConfig = false, ConfigFolder = "CONFIGS", IntroText = "GODLII HUB"})
+
+local TStab = Window:MakeTab({
+	Name = "Trade Scam",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+TStab:AddToggle({
+	Name = "Trade Scam other user",
+	Default = false,
+	Callback = function(Value)
+		OrionLib:MakeNotification({
+            Name = "ENABLED!",
+            Content = "You may now remove your items, as the other player will not be able to see it.",
+            Image = "rbxassetid://4483345998",
+            Time = 3
+        })
+	end    
+})
+
+local DUPER = Window:MakeTab({
+	Name = "Duper",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+DUPER:AddButton({
+	Name = "Duplicate Items!",
+	Callback = function()
+        OrionLib:MakeNotification({
+            Name = "Duping...",
+            Content = "Items are being duped...",
+            Image = "rbxassetid://4483345998",
+            Time = 5
+        })
+        wait(5)
+        OrionLib:MakeNotification({
+            Name = "Duped!",
+            Content = "Items have been duplicated! Please leave and rejoin the game.",
+            Image = "rbxassetid://4483345998",
+            Time = 4
+        })
+  	end    
+})
+
+local Destroy = Window:MakeTab({
+	Name = "Destroy Interface",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Destroy Interface",
+	Callback = function()
+        OrionLib:MakeNotification({
+            Name = "Destroyed Interface!",
+            Content = "We're so sad to see you go :(",
+            Image = "rbxassetid://4483345998",
+            Time = 5
+        })
+        OrionLib:Destroy()
+  	end    
+})
+
+OrionLib:Init()
